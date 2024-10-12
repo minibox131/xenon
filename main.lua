@@ -1,4 +1,5 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+
 if OrionLib then
     local Window = OrionLib:MakeWindow({Name = "Xenon hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Configsave"})
     local Home = Window:MakeTab({Name = "Home", Icon = "rbxassetid://17121251488", PremiumOnly = false})
@@ -7,23 +8,7 @@ if OrionLib then
     local Player = Window:MakeTab({Name = "Player", Icon = "rbxassetid://17121251488", PremiumOnly = false})
     local Credits = Window:MakeTab({Name = "Credits", Icon = "rbxassetid://17121251488", PremiumOnly = false})
 
-    OrionLib:MakeNotification({
-        Name = "You executed Xenon!",
-        Content = "You have executed this script successfully!",
-        Image = nil,
-        Time = 5.5
-    })
-
-    local player = game.Players.LocalPlayer
-    if player and player.UserId == 3554686024 then
-        OrionLib:MakeNotification({
-            Name = "Hello!",
-            Content = "Welcome quackduck1",
-            Image = nil,
-            Time = 10
-        })
-    end
-
+    -- Main Tab Buttons
     MainTab:AddButton({
         Name = "Infinite yield", 
         Callback = function() 
@@ -46,20 +31,6 @@ if OrionLib then
     })
 
     MainTab:AddButton({
-        Name = "TRD movie", 
-        Callback = function() 
-            pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Movies-Script/main/Protected_2790861193015493.lua'))() end) 
-        end
-    })
-
-    MainTab:AddButton({
-        Name = "TRD camp", 
-        Callback = function() 
-            pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Camp-Script/main/Roblox%20T.R.D%20Camp%20Script'))() end) 
-        end
-    })
-
-    MainTab:AddButton({
         Name = "RX5", 
         Callback = function() 
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/scriptemt/CE-Technologies/main/script', true))() end) 
@@ -73,6 +44,54 @@ if OrionLib then
         end
     })
 
+    MainTab:AddButton({
+        Name = "Break in", 
+        Callback = function() 
+            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))() end) 
+        end
+    })
+    MainTab:AddButton({
+        Name = "TRD movie", 
+        Callback = function() 
+            pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Movies-Script/main/Protected_2790861193015493.lua'))() end) 
+        end
+    })
+
+    MainTab:AddButton({
+        Name = "TRD camp", 
+        Callback = function() 
+            pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Camp-Script/main/Roblox%20T.R.D%20Camp%20Script'))() end) 
+        end
+    })
+    MainTab:AddButton({
+        Name = "Slap battles", 
+        Callback = function() 
+            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/cheesynob39/R2O/main/LOADSTRING.lua"))() end) 
+        end
+    })
+
+    MainTab:AddButton({
+        Name = "Slap Royale", 
+        Callback = function() 
+            pcall(function() loadstring(game:HttpGet("https://pastebin.com/raw/aNHpXhXY"))() end) 
+        end
+    })
+
+    MainTab:AddButton({
+        Name = "Nukermode(Dahood)", 
+        Callback = function()
+            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Da%20Hood.txt"))() end)
+        end
+    })
+
+    MainTab:AddButton({
+        Name = "Base raiders", 
+        Callback = function()
+            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Arth795-scripts/Luashit/main/baseraiderleaked"))() end)
+        end
+    })
+
+    -- Extra Tab Buttons
     Extra:AddButton({
         Name = "Basic ESP", 
         Callback = function() 
@@ -87,82 +106,7 @@ if OrionLib then
         end
     })
 
-    MainTab:AddButton({
-        Name = "Break in", 
-        Callback = function() 
-            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))() end) 
-        end
-    })
-
-    MainTab:AddButton({
-        Name = "Slap battles", 
-        Callback = function() 
-            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/cheesynob39/R2O/main/LOADSTRING.lua"))() end) 
-        end
-    })
-
-    Extra:AddButton({
-        Name = "Delta keyboard", 
-        Callback = function() 
-            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))() end) 
-        end
-    })
-
-    MainTab:AddButton({
-        Name = "Slap Royale", 
-        Callback = function() 
-            pcall(function() loadstring(game:HttpGet("https://pastebin.com/raw/aNHpXhXY"))() end) 
-        end
-    })
-
-    Home:AddButton({
-        Name = "Welcome to Xenon, I made this for myself, don't expect updates.", 
-        Callback = function () end
-    })
-
-    Credits:AddButton({
-        Name = "Credits to quackduck1 on Discord.", 
-        Callback = function () end
-    })
-
-    Credits:AddButton({
-        Name = "Thank you for using my script, it is my first time scripting.", 
-        Callback = function () end
-    })
-
-    Credits:AddButton({
-        Name = "V.0.66", 
-        Callback = function () end
-    })
-
-    MainTab:AddButton({
-        Name = "Nukermode(Dahood)", 
-        Callback = function ()
-            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Da%20Hood.txt"))() end)
-        end
-    })
-
-    Extra:AddButton({
-        Name = "Hitbox", 
-        Callback = function() 
-            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))() end) 
-        end
-    })
-
-    MainTab:AddButton({
-        Name = "Base raiders", 
-        Callback = function ()
-            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Arth795-scripts/Luashit/main/baseraiderleaked"))() end)
-        end
-    })
-
-    Extra:AddButton({
-        Name = "Mobile aimbot universal", 
-        Callback = function()
-            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Aimbot.lua"))() end)
-        end
-    })
-
+    -- Player Tab Features
     Player:AddTextbox({
         Name = "Walkspeed", 
         Default = "15", 
@@ -174,7 +118,7 @@ if OrionLib then
 
     Player:AddButton({
         Name = "Set walkspeed", 
-        Callback = function ()
+        Callback = function()
             pcall(function() game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = _G.speed end)
         end
     })
@@ -190,26 +134,80 @@ if OrionLib then
 
     Player:AddButton({
         Name = "Set jumppower", 
-        Callback = function ()
+        Callback = function()
             pcall(function() game.Players.LocalPlayer.Character.Humanoid.JumpPower = _G.jp end)
         end
     })
 
-    Player:AddButton({
-        Name = "Note: Default Jp is 50, speed is 15", 
+    -- Home Tab Button
+    Home:AddButton({
+        Name = "Welcome to Xenon, I made this for myself, don't expect updates.", 
         Callback = function () end
     })
 
-    Player:AddTextbox({
-        Name = "Send to console", 
-        Default = "", 
-        TextDisappear = true, 
-        Callback = function(value)
-            print(value)
-        end
+    -- Credits Tab Buttons
+    Credits:AddButton({
+        Name = "Credits to quackduck1 on Discord.", 
+        Callback = function () end
     })
 
+    Credits:AddButton({
+        Name = "Thank you for using my script, it is my first time scripting.", 
+        Callback = function () end
+    })
+
+    Credits:AddButton({
+        Name = "V.0.70", 
+        Callback = function () end
+    })
+
+    -- Initialize the GUI
     OrionLib:Init()
+
+    -- Draggable Functionality
+    local UIS = game:GetService("UserInputService")
+    local RunService = game:GetService("RunService")
+
+    local function makeDraggable(frame)
+        local dragging, dragInput, startPos, inputStart
+
+        local function update(input)
+            local delta = input.Position - inputStart
+            frame.Position = UDim2.new(
+                startPos.X.Scale, startPos.X.Offset + delta.X,
+                startPos.Y.Scale, startPos.Y.Offset + delta.Y
+            )
+        end
+
+        frame.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                dragging = true
+                inputStart = input.Position
+                startPos = frame.Position
+
+                input.Changed:Connect(function()
+                    if input.UserInputState == Enum.UserInputState.End then
+                        dragging = false
+                    end
+                end)
+            end
+        end)
+
+        frame.InputChanged:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                dragInput = input
+            end
+        end)
+
+        RunService.RenderStepped:Connect(function()
+            if dragging and dragInput then
+                update(dragInput)
+            end
+        end)
+    end
+
+    -- Make the window draggable
+    makeDraggable(Window.Container)  -- Adjust if necessary
 else
     print("Failed to load OrionLib")
 end
