@@ -137,7 +137,7 @@ if OrionLib then
     })
 
     Credits:AddButton({
-        Name = "V.0.66", 
+        Name = "V.0.70", 
         Callback = function () end
     })
 
