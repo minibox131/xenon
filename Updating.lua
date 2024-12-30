@@ -93,7 +93,7 @@ local Button = hom:CreateButton({
    end,
 })
 local Button = hom:CreateButton({
-   Name = "Slap royal (might not work due to it being a pastebin",
+   Name = "Slap royal (might not work due to it being a pastebin)",
    Callback = function()
         Callback = function() 
             pcall(function() loadstring(game:HttpGet('https://pastebin.com/raw/aNHpXhXY'))() end) 
@@ -110,6 +110,125 @@ local Button = hom:CreateButton({
     Name = "Base raiders",
     Callback = function()
          Callback = function()
-              pcall(fucntion() loadstring(gameHttpGet:('https://raw.githubusercontent.com/Arth795-scripts/Luashit/main/baseraiderleaked"'))() end)
+              pcall(function() loadstring(gameHttpGet:('https://raw.githubusercontent.com/Arth795-scripts/Luashit/main/baseraiderleaked"'))() end)
    end,
+})
+local Button = uti:CreateButton({
+   Name = "Basic Esp",
+   Callback = function()
+        Callback = function()
+             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))() end)
+   end,
+}) 
+local Button = uti:CreateButton({
+   Name = "Another Hub (not mine)",
+   Callback = function()
+        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/DreadzHub2/DreadzHub-Scripts-FR/main/Loader', true))() end) 
+   end,
+})
+local Button = uti:CreateButton({
+   Name = "Delta keyboard"
+   Callback = function()
+        pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))() end) 
+   end,
+})
+local Button = uti:CreateButton({
+        Name = "Hitbox", 
+        Callback = function() 
+             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))() end) 
+   end,
+})
+local Button = uti:CreateButton({
+        Name = "Mobile aimbot universal", 
+        Callback = function()
+            pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Aimbot.lua"))() end)
+   end,
+})
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer 
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local Humanoid = Character:WaitForChild("Humanoid")
+local Slider = pla:CreateSlider({
+    Name = "Speed Slider",
+    Range = {16, 100},
+    Increment = 1, 
+    Suffix = "Speed",
+    CurrentValue = 16,
+    Flag = "SpeedSlider", 
+    Callback = function(Value)
+        if Humanoid then
+Rayfield:Notify({
+   Title = "Sucess"
+   Content("Speed sucessfully set to", Value),
+   Duration = 3.5,
+   Image = 4483362458
+})
+        else
+Rayfield:Notify({
+   Title = "ERROR",
+   Content = "Humanoid not found.",
+   Duration = 3.5,
+   Image = 4483362458,
+})
+        end
+    end,
+})
+local Slider = pla:CreateSlider({
+    Name = "Jump Power Slider",
+    Range = {50, 200},
+    Increment = 1, 
+    Suffix = "Power",
+    CurrentValue = 50,
+    Flag = "JumpPowerSlider",
+    Callback = function(Value)
+        if Humanoid then
+            Humanoid.JumpPower = Value
+Rayfield:Notify({
+   Title = "Sucess"
+   Content("Jump power sucessfully set to", Value),
+   Duration = 3.5,
+   Image = 4483362458
+})
+        else
+Rayfield:Notify({
+   Title = "ERROR",
+   Content = "Humanoid not found.",
+   Duration = 3.5,
+   Image = 4483362458,
+})
+        end
+    end,
+})
+local HttpService = game:GetService("HttpService")
+local webhookUrl = "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"
+local Input = uti:CreateInput({
+    Name = "Send Discord",
+    CurrentValue = "",
+    PlaceholderText = "Enter your message here",
+    RemoveTextAfterFocusLost = false,
+    Flag = "Input1",
+    Callback = function(txt)
+        if txt and txt ~= "" then
+               -- construct payload
+            local payload = {
+                content = txt,
+                username = "wowza", 
+                avatar_url = "https://i.imgur.com/4M34hi2.png" 
+            }
+
+            local payloadJson = HttpService:JSONEncode(payload)
+
+            local success, response = pcall(function()
+                return HttpService:PostAsync(webhookUrl, payloadJson, Enum.HttpContentType.ApplicationJson)
+            end)
+
+            if success then
+                print("Message sent to Discord!")
+            else
+                warn("Failed to send message to Discord:", response)
+            end
+        else
+            warn("No text entered. Please provide a message.")
+        end
+    end,
 })
