@@ -191,38 +191,6 @@ if OrionLib then
             print(value)
         end
     })
-
-local HttpService = game:GetService("HttpService")
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local webhookUrl = "https://discord.com/api/webhooks/1323477409038860328/7Q9g7IvVRstnXYVOoZgA_gT6K7q5PQYL_4vBsSWE8x_6O2PFoMBwQN48Age-61BEFCqB"
-local gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-Extra:AddTextbox({
-    Name = "Send to Discord",
-    Default = "",
-    TextDisappear = true, 
-    Callback = function(Value) end
-        if Value and Value ~= "" then
-            local payload = {
-                content = Value,
-                username = string.format("From %s in %s", LocalPlayer.Name, gameName), 
-                avatar_url = "https://i.imgur.com/4M34hi2.png" 
-            }
-            local payloadJson = HttpService:JSONEncode(payload)
-            local success, response = pcall(function()
-                return HttpService:PostAsync(webhookUrl, payloadJson, Enum.HttpContentType.ApplicationJson)
-            end)
-            if success then
-                print("Message sent to Discord: " .. Value)
-            else
-                warn("Failed to send message to Discord:", response)
-            end
-        else
-            warn("No text entered. Please provide a message.")
-        end
-    end,
-})
-
 else
     print("Failed to load OrionLib")
 end
