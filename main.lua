@@ -9,91 +9,91 @@ if OrionLib then
     -- Main Tab Buttons
   MainTab:AddButton({
         Name = "Infinite yield", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "Owl Hub", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "KAT", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/JNHHGaming/Kat12/main/Kat'))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "TRD movie", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Movies-Script/main/Protected_2790861193015493.lua'))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "TRD camp", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Camp-Script/main/Roblox%20T.R.D%20Camp%20Script'))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "RX5", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/scriptemt/CE-Technologies/main/script', true))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "Navel warfare", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/raimbowo1/test/main/naval', true))() end) 
         end
     })
 
     Extra:AddButton({
         Name = "Basic ESP", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))() end) 
         end
     })
 
     Extra:AddButton({
         Name = "Another hub (Not mine)", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/DreadzHub2/DreadzHub-Scripts-FR/main/Loader', true))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "Break in", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "Slap battles", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/cheesynob39/R2O/main/LOADSTRING.lua"))() end) 
         end
     })
 
     Extra:AddButton({
         Name = "Delta keyboard", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "Slap Royale", 
-        Callback = function() 
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet("https://pastebin.com/raw/aNHpXhXY"))() end) 
         end
     })
@@ -120,28 +120,28 @@ if OrionLib then
 
     MainTab:AddButton({
         Name = "Nukermode(Dahood)", 
-        Callback = function ()
+        Callback = function () end
             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Da%20Hood.txt"))() end)
         end
     })
 
     Extra:AddButton({
         Name = "Hitbox", 
-        Callback = function() 
+        Callback = function()  end
             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))() end) 
         end
     })
 
     MainTab:AddButton({
         Name = "Base raiders", 
-        Callback = function ()
+        Callback = function () end
             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Arth795-scripts/Luashit/main/baseraiderleaked"))() end)
         end
     })
 
     Extra:AddButton({
         Name = "Mobile aimbot universal", 
-        Callback = function()
+        Callback = function() end
             pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Aimbot.lua"))() end)
         end
     })
@@ -150,14 +150,14 @@ if OrionLib then
         Name = "Walkspeed", 
         Default = "15", 
         TextDisappear = true, 
-        Callback = function(value)
+        Callback = function(value) end
             _G.speed = tonumber(value) 
         end
     })
 
     Player:AddButton({
         Name = "Set walkspeed", 
-        Callback = function ()
+        Callback = function () end
             pcall(function() game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = _G.speed end)
         end
     })
@@ -166,14 +166,14 @@ if OrionLib then
         Name = "Jump power", 
         Default = "50", 
         TextDisappear = true, 
-        Callback = function(value)
+        Callback = function(value) end
             _G.jp = tonumber(value)
         end
     })
 
     Player:AddButton({
         Name = "Set jumppower", 
-        Callback = function ()
+        Callback = function () end
             pcall(function() game.Players.LocalPlayer.Character.Humanoid.JumpPower = _G.jp end)
         end
     })
@@ -187,7 +187,7 @@ if OrionLib then
         Name = "Send to console", 
         Default = "", 
         TextDisappear = true, 
-        Callback = function(value)
+        Callback = function(value) end
             print(value)
         end
     })
@@ -201,7 +201,7 @@ Extra:AddTextbox({
     Name = "Send to Discord",
     Default = "",
     TextDisappear = true, 
-    Callback = function(Value) 
+    Callback = function(Value) end
         if Value and Value ~= "" then
             local payload = {
                 content = Value,
