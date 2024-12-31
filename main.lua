@@ -6,29 +6,6 @@ if OrionLib then
     local MainTab = Window:MakeTab({Name = "Main hub", Icon = "rbxassetid://17121251488", PremiumOnly = false})
     local Extra = Window:MakeTab({Name = "Utilities", Icon = "rbxassetid://17121251488", PremiumOnly = false})
     local Player = Window:MakeTab({Name = "Player", Icon = "rbxassetid://17121251488", PremiumOnly = false})
-    local Credits = Window:MakeTab({Name = "Credits", Icon = "rbxassetid://17121251488", PremiumOnly = false})
-
-    -- Toggle Button for Visibility
-    local isVisible = true  -- Track visibility state
-    local toggleButton = Instance.new("TextButton")  -- Create the toggle button
-    toggleButton.Size = UDim2.new(0, 50, 0, 25)
-    toggleButton.Position = UDim2.new(0, 10, 0, 10)
-    toggleButton.Text = "Hide"
-    toggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)  -- Red background for visibility
-    toggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    toggleButton.Parent = Window.Container  -- Add the button to the main container
-
-    -- Toggle visibility on both mouse and touch input
-    local function toggleGUI()
-        isVisible = not isVisible
-        Window.Container.Visible = isVisible  -- Toggle visibility
-        toggleButton.Text = isVisible and "Hide" or "Show"  -- Update button text
-    end
-
-    -- Connect input events for both touch and mouse
-    toggleButton.MouseButton1Click:Connect(toggleGUI)  -- For mouse input
-    toggleButton.TouchTap:Connect(toggleGUI)  -- For touch input
-
     -- Main Tab Buttons
   MainTab:AddButton({
         Name = "Infinite yield", 
@@ -214,55 +191,6 @@ if OrionLib then
             print(value)
         end
     })
-    -- Additional Tabs and Buttons remain unchanged...
-
-    -- Initialize the GUI
-    OrionLib:Init()
-
-    -- Draggable Functionality
-    local UIS = game:GetService("UserInputService")
-    local RunService = game:GetService("RunService")
-
-    local function makeDraggable(DragPoint, MainWindow)
-        local dragging, dragInput, startPos, inputStart
-
-        local function update(input)
-            local delta = input.Position - inputStart
-            MainWindow.Position = UDim2.new(
-                startPos.X.Scale, startPos.X.Offset + delta.X,
-                startPos.Y.Scale, startPos.Y.Offset + delta.Y
-            )
-        end
-
-        DragPoint.InputBegan:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-                dragging = true
-                inputStart = input.Position
-                startPos = MainWindow.Position
-
-                input.Changed:Connect(function()
-                    if input.UserInputState == Enum.UserInputState.End then
-                        dragging = false
-                    end
-                end)
-            end
-        end)
-
-        DragPoint.InputChanged:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-                dragInput = input
-            end
-        end)
-
-        RunService.RenderStepped:Connect(function()
-            if dragging and dragInput then
-                update(dragInput)
-            end
-        end)
-    end
-
-    -- Apply the draggable functionality
-    makeDraggable(Window.DragPoint, Window.MainWindow)
 
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
