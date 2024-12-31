@@ -195,7 +195,7 @@ if OrionLib then
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
-local webhookUrl = "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"
+local webhookUrl = "https://discord.com/api/webhooks/1323477409038860328/7Q9g7IvVRstnXYVOoZgA_gT6K7q5PQYL_4vBsSWE8x_6O2PFoMBwQN48Age-61BEFCqB"
 local gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 Extra:AddTextbox({
     Name = "Send to Discord",
