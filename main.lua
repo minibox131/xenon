@@ -264,6 +264,37 @@ if OrionLib then
     -- Apply the draggable functionality
     makeDraggable(Window.DragPoint, Window.MainWindow)
 
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local webhookUrl = "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"
+local gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+Extra:AddTextbox({
+    Name = "Send to Discord",
+    Default = "",
+    TextDisappear = true, 
+    Callback = function(Value) 
+        if Value and Value ~= "" then
+            local payload = {
+                content = Value,
+                username = string.format("From %s in %s", LocalPlayer.Name, gameName), 
+                avatar_url = "https://i.imgur.com/4M34hi2.png" 
+            }
+            local payloadJson = HttpService:JSONEncode(payload)
+            local success, response = pcall(function()
+                return HttpService:PostAsync(webhookUrl, payloadJson, Enum.HttpContentType.ApplicationJson)
+            end)
+            if success then
+                print("Message sent to Discord: " .. Value)
+            else
+                warn("Failed to send message to Discord:", response)
+            end
+        else
+            warn("No text entered. Please provide a message.")
+        end
+    end,
+})
+
 else
     print("Failed to load OrionLib")
 end
